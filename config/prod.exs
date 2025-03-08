@@ -13,7 +13,8 @@ config :crypto_app, CryptoAppWeb.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: CryptoAppWeb.ErrorView, accepts: ~w(html json)],
   pubsub_server: CryptoApp.PubSub,
-  live_view: [signing_salt: "some_salt"]
+  live_view: [signing_salt: "some_salt"],
+  check_origin: ["https://ocean-7dxf.onrender.com"] 
 
 # Configures Swoosh API Client
 config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: CryptoApp.Finch
