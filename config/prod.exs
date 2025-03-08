@@ -9,8 +9,8 @@ config :crypto_app, CryptoAppWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 config :crypto_app, CryptoAppWeb.Endpoint,
-  url: [host: "ocean-7dxf.onrender.com", port: 80],
-  secret_key_base: "/8eDYoKsKQyETb/hiyW5NcODbGq8l/T4L5FYOnaMzCvYpsnGOSRaLJD5TAKYUmN7",
+  url: [host: "ocean-7dxf.onrender.com", port: 443, scheme: "https"],
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: CryptoAppWeb.ErrorView, accepts: ~w(html json)],
   pubsub_server: CryptoApp.PubSub,
   live_view: [signing_salt: "some_salt"]
